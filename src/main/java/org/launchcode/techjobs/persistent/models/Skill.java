@@ -2,8 +2,10 @@ package org.launchcode.techjobs.persistent.models;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.Size;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.List;
 public class Skill extends AbstractEntity {
 
 
+    @Size(min = 3, max = 255)
     private String description;
 
     @ManyToMany(mappedBy = "skills")
